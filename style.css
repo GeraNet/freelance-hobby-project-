@@ -9,11 +9,10 @@ body {
 .hero {
   height: 90vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
   background: radial-gradient(circle at top, #1d4ed8, #0b0f1a);
-  padding: 20px;
 }
 
 .hero h1 {
@@ -22,14 +21,14 @@ body {
 
 .hero p {
   max-width: 600px;
-  margin: 20px auto;
   color: #cbd5e1;
+  margin: 20px auto;
 }
 
 .badges span {
-  margin: 5px;
-  padding: 6px 10px;
   background: rgba(255,255,255,0.1);
+  padding: 6px 10px;
+  margin: 5px;
   border-radius: 8px;
 }
 
@@ -58,7 +57,7 @@ body {
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
 
@@ -67,7 +66,14 @@ body {
   background: #1f2937;
   padding: 20px;
   border-radius: 12px;
-  transition: 0.3s;
+  transition: 0.4s;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card:hover {
