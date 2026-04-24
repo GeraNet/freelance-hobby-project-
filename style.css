@@ -1,136 +1,22 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:system-ui;
-}
+const elements = document.querySelectorAll(".fade, .slide-up, .slide-left, .slide-right");
 
-body{
-  background:#0b0f1a;
-  color:white;
-  overflow-x:hidden;
-}
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{threshold:0.15});
 
-/* NAV */
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  padding:15px 8%;
-  background:rgba(0,0,0,0.4);
-  backdrop-filter:blur(10px);
-  z-index:1000;
-}
+elements.forEach(el=>observer.observe(el));
 
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:15px;
-  opacity:0.7;
-}
 
-nav a:hover{
-  opacity:1;
-}
-
-/* HERO */
-#hero{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:radial-gradient(circle at top,#1d4ed8,#0b0f1a);
-}
-
-.hero-content h1{
-  font-size:40px;
-}
-
-.hero-content p{
-  opacity:0.8;
-}
-
-/* BUTTON */
-.btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 22px;
-  background:#2563eb;
-  color:white;
-  text-decoration:none;
-  border-radius:12px;
-}
-
-/* SECTIONS */
-section{
-  padding:100px 10%;
-  scroll-margin-top:80px;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-  margin-top:20px;
-}
-
-/* CARDS */
-.card,
-.price-card{
-  background:#1f2937;
-  padding:20px;
-  border-radius:12px;
-}
-
-.featured{
-  border:1px solid #2563eb;
-}
-
-/* ABOUT ME */
-.me-section{
-  text-align:center;
-}
-
-.me-img{
-  width:160px;
-  height:160px;
-  border-radius:50%;
-  object-fit:cover;
-  margin:20px auto;
-}
-
-/* ANIMATIONS */
-.fade,
-.slide-left,
-.slide-right,
-.slide-up{
-  opacity:0;
-  transition:0.8s ease;
-}
-
-.slide-left{transform:translateX(-40px);}
-.slide-right{transform:translateX(40px);}
-.slide-up{transform:translateY(40px);}
-
-.show{
-  opacity:1 !important;
-  transform:translate(0,0) !important;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:30px;
-  opacity:0.6;
-}
-
-/* MOBILE */
-@media(max-width:800px){
-  .grid{
-    grid-template-columns:1fr;
-  }
-}
+// smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener("click",e=>{
+    e.preventDefault();
+    document.querySelector(a.getAttribute("href")).scrollIntoView({
+      behavior:"smooth"
+    });
+  });
+});
