@@ -1,141 +1,163 @@
-body {
-  margin: 0;
-  font-family: system-ui;
-  background: #0b0f1a;
-  color: white;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:system-ui;
+}
+
+body{
+  background:#0b0f1a;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 8%;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(12px);
+  z-index:1000;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:15px;
+  opacity:0.7;
+}
+
+nav a:hover{
+  opacity:1;
 }
 
 /* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: radial-gradient(circle at 50% 0%, #2563eb, #0b0f1a);
+#hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 20px;
+  background:radial-gradient(circle at top,#1d4ed8,#0b0f1a);
 }
 
-.hero-inner {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  max-width: 1100px;
-  padding: 20px;
+.hero-content{
+  max-width:700px;
 }
 
-.hero-text {
-  max-width: 500px;
+.hero-content h1{
+  font-size:42px;
 }
 
-.hero h1 {
-  font-size: 44px;
+.hero-content p{
+  opacity:0.8;
+  margin-top:10px;
 }
 
-.hero p {
-  color: #cbd5e1;
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 22px;
+  background:#2563eb;
+  color:white;
+  text-decoration:none;
+  border-radius:12px;
+  transition:0.3s;
 }
 
-.cta {
-  margin-top: 20px;
-  display: inline-block;
-  padding: 14px 26px;
-  background: #2563eb;
-  border-radius: 12px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
+.btn:hover{
+  transform:scale(1.05);
 }
 
-/* IMAGE */
-.hero-image img {
-  width: 260px;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  transition: 0.4s;
+/* SECTIONS */
+section{
+  padding:90px 10%;
 }
 
-.hero-image img:hover {
-  transform: scale(1.05);
+/* ABOUT ME */
+.me-section{
+  text-align:center;
 }
 
-/* NOTICE */
-.notice {
-  text-align: center;
-  padding: 10px;
-  background: #facc15;
-  color: black;
+.me-img{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  margin:20px auto;
+  box-shadow:0 0 25px rgba(37,99,235,0.4);
 }
 
-/* PRICING */
-.pricing {
-  padding: 80px 20px;
-  text-align: center;
+/* SERVICES */
+.service-box{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:20px;
 }
 
-.pricing-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-  max-width: 900px;
-  margin: auto;
+.card{
+  background:#1f2937;
+  padding:20px;
+  border-radius:12px;
 }
 
-.price-card {
-  background: rgba(255,255,255,0.05);
-  padding: 30px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  transition: 0.4s;
+/* PRICE */
+.price-box{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  margin-top:20px;
 }
 
-.price-card:hover {
-  transform: translateY(-10px);
+.price-card{
+  background:#1f2937;
+  padding:25px;
+  border-radius:14px;
 }
 
-.featured {
-  border: 1px solid #2563eb;
-  box-shadow: 0 0 30px rgba(37,99,235,0.4);
+.featured{
+  border:1px solid #2563eb;
 }
 
-.price {
-  font-size: 28px;
-  margin-top: 20px;
+/* ANIMATIONS */
+.fade,
+.slide-left,
+.slide-right,
+.slide-up{
+  opacity:0;
+  transition:0.8s ease;
 }
 
-.badge {
-  padding: 5px 10px;
-  border-radius: 20px;
+.slide-left{transform:translateX(-40px);}
+.slide-right{transform:translateX(40px);}
+.slide-up{transform:translateY(40px);}
+
+.show{
+  opacity:1 !important;
+  transform:translate(0,0) !important;
 }
 
-.green { background: #16a34a; }
-.blue { background: #2563eb; }
-
-/* INFO */
-.info {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-/* CONTACT */
-.contact {
-  padding: 60px 20px;
-  text-align: center;
-  background: #111827;
-}
-
-/* LEGAL */
-.legal {
-  padding: 60px 20px;
-  text-align: center;
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  opacity:0.6;
 }
 
 /* MOBILE */
-@media (max-width: 800px) {
-  .hero-inner {
-    flex-direction: column;
-    text-align: center;
+@media(max-width:800px){
+  .service-box{
+    grid-template-columns:1fr;
   }
 
-  .pricing-grid {
-    grid-template-columns: 1fr;
+  .price-box{
+    grid-template-columns:1fr;
   }
 }
