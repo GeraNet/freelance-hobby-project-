@@ -5,65 +5,102 @@ body {
   color: white;
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(circle at top, #1d4ed8, #0b0f1a);
   padding: 20px;
 }
 
-.topbar {
-  text-align: center;
+.hero h1 {
+  font-size: 42px;
 }
 
-.lang button {
+.hero p {
+  max-width: 600px;
+  margin: 20px auto;
+  color: #cbd5e1;
+}
+
+.badges span {
   margin: 5px;
-  padding: 8px;
-  cursor: pointer;
-}
-
-.card {
-  background: #151c2e;
-  padding: 15px;
-  margin: 12px 0;
-  border-radius: 10px;
-}
-
-.badge {
-  background: #ffcc00;
-  color: black;
-  padding: 10px;
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.1);
   border-radius: 8px;
 }
 
-.badge2 {
-  background: #2d6cdf;
-  padding: 10px;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-.founder {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
-
-.avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.footer {
-  text-align: center;
+/* BUTTON */
+.btn {
+  display: inline-block;
   margin-top: 20px;
+  padding: 12px 20px;
+  background: #2563eb;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.dark {
+  background: #111827;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* CARD */
+.card {
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.highlight {
+  border: 1px solid #2563eb;
+}
+
+/* NOTICE */
+.notice {
+  text-align: center;
+  padding: 10px;
+  background: #facc15;
+  color: black;
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
   color: #888;
 }
 
-@media (max-width: 600px) {
-  .founder {
-    flex-direction: column;
-    text-align: center;
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 28px;
   }
 }
