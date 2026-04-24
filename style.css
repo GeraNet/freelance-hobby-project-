@@ -1,22 +1,123 @@
-const elements = document.querySelectorAll(".fade, .slide-up, .slide-left, .slide-right");
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:system-ui;
+}
 
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-},{threshold:0.15});
+body{
+  background:#0b0f1a;
+  color:white;
+}
 
-elements.forEach(el=>observer.observe(el));
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 8%;
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(10px);
+}
 
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:15px;
+  opacity:0.7;
+}
 
-// smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener("click",e=>{
-    e.preventDefault();
-    document.querySelector(a.getAttribute("href")).scrollIntoView({
-      behavior:"smooth"
-    });
-  });
-});
+/* HERO */
+#hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:radial-gradient(circle,#1d4ed8,#0b0f1a);
+}
+
+.hero-content h1{
+  font-size:40px;
+}
+
+.hero-content p{
+  opacity:0.8;
+  margin-top:10px;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 22px;
+  background:#2563eb;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+}
+
+/* SECTIONS */
+section{
+  padding:100px 10%;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  margin-top:20px;
+}
+
+/* CARD */
+.card{
+  background:#1f2937;
+  padding:20px;
+  border-radius:12px;
+}
+
+/* FEATURED */
+.featured{
+  border:1px solid #2563eb;
+}
+
+/* ME */
+.me{
+  text-align:center;
+}
+
+.me img{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  margin:20px auto;
+}
+
+/* REVEAL FIXED */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.6s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  opacity:0.6;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
