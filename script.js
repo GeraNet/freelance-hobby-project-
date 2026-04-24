@@ -1,26 +1,27 @@
-const elements = document.querySelectorAll(".card");
+// анимация карточек
+const cards = document.querySelectorAll(".price-card");
 
-function reveal() {
-  const windowHeight = window.innerHeight;
+window.addEventListener("scroll", () => {
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
 
-  elements.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-
-    if (top < windowHeight - 80) {
-      el.classList.add("show");
+    if (top < window.innerHeight - 50) {
+      card.style.opacity = "1";
+      card.style.transform = "translateY(0)";
     }
   });
-}
+});
 
-window.addEventListener("scroll", reveal);
-window.addEventListener("load", reveal);
+// анимация фото
+const img = document.querySelector(".hero-image img");
 
-// smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener("click", e => {
-    e.preventDefault();
-    document.querySelector(a.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
-  });
+window.addEventListener("load", () => {
+  img.style.opacity = "0";
+  img.style.transform = "translateY(30px)";
+
+  setTimeout(() => {
+    img.style.transition = "0.8s";
+    img.style.opacity = "1";
+    img.style.transform = "translateY(0)";
+  }, 300);
 });
