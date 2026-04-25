@@ -3,80 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FHP – Web Studio</title>
+<title>FHP – Freelance Hobby Projekt</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- LOADER -->
+<div id="loader">
+  <div class="spinner"></div>
+  <p>FHP wird geladen...</p>
+</div>
+
+<!-- PROGRESS -->
+<div id="progress"></div>
+
+<!-- NAV -->
 <nav>
   <div class="logo">FHP</div>
-  <div>
+  <div class="burger" id="burger">☰</div>
+
+  <div class="nav-links" id="navLinks">
     <a href="#about">Über FHP</a>
-    <a href="#me">Über mich</a>
     <a href="#services">Leistungen</a>
     <a href="#price">Preise</a>
     <a href="#contact">Kontakt</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <header id="hero">
-  <div class="hero-content show">
-    <h1>Moderne Webseiten für kleine Projekte</h1>
-    <p>FHP erstellt einfache, schnelle und moderne Websites in Gera.</p>
+  <div class="hero-content reveal">
+    <h1 id="typing"></h1>
+
+    <p>
+      Moderne, schnelle und individuelle Webseiten für kleine Projekte,
+      lokale Unternehmen und persönliche Ideen in Gera.
+    </p>
+
+    <p>
+      Fokus auf klare Struktur, modernes Design und einfache Lösungen.
+    </p>
+
     <a href="#price" class="btn">Preise ansehen</a>
   </div>
 </header>
 
+<!-- ABOUT -->
 <section id="about" class="reveal">
   <h1>Über FHP</h1>
-  <p>Persönliches Webentwicklungsprojekt aus Gera.</p>
-  <p>Ziel: kleine Unternehmen online sichtbar machen.</p>
+
+  <p>
+    FHP ist ein persönliches Freelance Hobby Projekt aus Gera.
+    Ich entwickle Webseiten für kleine Unternehmen und individuelle Projekte.
+  </p>
+
+  <p>
+    Der Fokus liegt auf schnellen, modernen und funktionalen Websites,
+    die auf allen Geräten gut funktionieren.
+  </p>
+
+  <p>
+    Keine Firma – direkte Zusammenarbeit ohne Agentur.
+    Dadurch bleiben die Preise flexibel und transparent.
+  </p>
 </section>
 
-<section id="me" class="reveal me">
-  <img src="https://i.ibb.co/k2nbHQrP/IMG-3143.jpg" alt="me">
-  <h1>Über mich</h1>
-  <p>Ich entwickle Webseiten für lokale Projekte.</p>
-</section>
-
+<!-- SERVICES -->
 <section id="services" class="reveal">
   <h1>Leistungen</h1>
 
-  <div class="grid">
-    <div class="card">🌐 Website</div>
-    <div class="card">🎨 Design</div>
-    <div class="card">⚡ Speed</div>
-  </div>
-</section>
-
-<section id="price" class="reveal">
-  <h1>Preise</h1>
+  <p>
+    FHP bietet Webdesign, einfache digitale Lösungen und Logo-Erstellung.
+    Jede Website wird individuell erstellt.
+  </p>
 
   <div class="grid">
+
     <div class="card">
-      🟢 Einfach<br><br>
-      50–100€
+      🌐 Einfache Website<br><br>
+      • 1 Seite<br>
+      • Kontakt & Infos<br>
+      • Mobile Optimierung<br><br>
+      <b>50 – 100 €</b>
+    </div>
+
+    <div class="card">
+      🔵 Moderne Website<br><br>
+      • Mehr Inhalte<br>
+      • Struktur & Design<br><br>
+      <b>100 – 200 €</b>
     </div>
 
     <div class="card featured">
-      🔵 Modern<br><br>
-      100–200€
+      🚀 Mehrseitige Website<br><br>
+      • 3–7 Seiten<br>
+      • Navigation<br>
+      • Individuelles Design<br><br>
+      <b>200 – 400 €+</b>
     </div>
+
+    <div class="card">
+      🎨 Logo Design<br><br>
+      • Modernes Logo<br>
+      • Branding<br><br>
+      <b>30 – 80 €</b>
+    </div>
+
   </div>
 </section>
 
+<!-- PRICE -->
+<section id="price" class="reveal">
+  <h1>Preise</h1>
+
+  <p>
+    Die Preise hängen vom Umfang des Projekts ab.
+    Komplexere Websites können teurer sein.
+  </p>
+
+  <p>
+    In Einzelfällen kann der Preis bis zu +200 € steigen.
+  </p>
+
+  <div class="grid">
+
+    <div class="card">
+      🟢 Starter<br><br>
+      1 Seite Website<br>
+      <b>50 – 100 €</b>
+    </div>
+
+    <div class="card">
+      🔵 Standard<br><br>
+      Mehr Inhalte<br>
+      <b>100 – 200 €</b>
+    </div>
+
+    <div class="card featured">
+      🟣 Advanced<br><br>
+      Mehrseitige Website<br>
+      <b>200 – 400 €+</b>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact" class="reveal">
   <h1>Kontakt</h1>
-  <p>📞 +380 97 292 1871</p>
 
-  <a class="btn" href="https://t.me/Duf7484">
-    Telegram
+  <p>
+    Interesse an einer Website oder einem Logo?
+    Schreib mir direkt über Telegram oder WhatsApp.
+  </p>
+
+  <p>
+    Nur schriftliche Kommunikation (keine Anrufe).
+  </p>
+
+  <a class="btn" href="https://t.me/Duf7484" target="_blank">
+    Telegram schreiben
   </a>
+
+  <a class="btn" href="https://wa.me/380972921871" target="_blank">
+    WhatsApp schreiben
+  </a>
+
+  <div style="margin-top:25px;">
+    <p><b>Zahlung:</b> Nur Barzahlung</p>
+    <p>Bezahlung erfolgt persönlich in Gera.</p>
+  </div>
 </section>
 
 <footer>
-  © FHP
+  © 2026 FHP – Freelance Hobby Projekt
 </footer>
 
 <script src="script.js"></script>
