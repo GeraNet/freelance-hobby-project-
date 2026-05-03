@@ -10,6 +10,7 @@
 
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="logo">FHP</div>
 
@@ -18,11 +19,13 @@
   </div>
 </nav>
 
-<!-- MENU -->
+<!-- FULL MENU -->
 <div class="menu" id="menu">
   <a href="#hero" onclick="toggleMenu()">Start</a>
   <a href="#about" onclick="toggleMenu()">Über mich</a>
   <a href="#services" onclick="toggleMenu()">Leistungen</a>
+  <a href="#process" onclick="toggleMenu()">Ablauf</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
   <a href="#contact" onclick="toggleMenu()">Kontakt</a>
 
   <a onclick="openModal('impressum')">Impressum</a>
@@ -31,99 +34,149 @@
 
 <!-- HERO -->
 <header id="hero">
-  <h1 class="fade">Moderne Websites, die Menschen wirklich nutzen 🚀</h1>
+  <div class="hero-inner fade">
+    <div class="tag">Freelance Hobby Projekt · Gera</div>
 
-  <p class="fade">
-    FHP ist ein kleines Freelance Hobby Projekt aus Gera.<br>
-    Fokus: schnelle, klare und moderne Webseiten, die nicht nur gut aussehen,
-    sondern auch Kunden anziehen.
-  </p>
+    <h1>Moderne Webseiten, die wirken.</h1>
 
-  <p class="fade highlight">
-    Minimal Design + starke Wirkung = mehr Aufmerksamkeit für dein Projekt.
-  </p>
+    <p>
+      Ich entwickle klare, schnelle und moderne Webseiten für kleine Projekte,
+      lokale Ideen und persönliche Projekte.
+    </p>
+
+    <div class="buttons">
+      <a href="#contact" class="btn">Kontakt aufnehmen</a>
+      <a href="#services" class="btn ghost">Leistungen ansehen</a>
+    </div>
+  </div>
 </header>
 
 <!-- ABOUT -->
 <section id="about">
+  <h2 class="fade">Über FHP</h2>
 
-  <div class="card fade">
-    <b>Wer steckt dahinter?</b><br>
-    Ich bin Vadim (14) und baue Webseiten als Hobby – mit Fokus auf modernes Design.
+  <div class="grid">
+    <div class="card fade">
+      <b>Persönliches Projekt</b><br>
+      Kein Unternehmen – direkte Umsetzung ohne Umwege.
+    </div>
+
+    <div class="card fade">
+      <b>Fokus</b><br>
+      Design + Struktur + Benutzerfreundlichkeit.
+    </div>
+
+    <div class="card fade">
+      <b>Ziel</b><br>
+      Webseiten, die Vertrauen schaffen und Nutzer halten.
+    </div>
   </div>
-
-  <div class="card fade">
-    <b>Warum FHP?</b><br>
-    Kein Agentur-Overhead, keine komplizierten Prozesse – direkte Umsetzung.
-  </div>
-
-  <div class="card fade">
-    <b>Was ist das Ziel?</b><br>
-    Webseiten, die echt wirken, Besucher halten und Vertrauen erzeugen.
-  </div>
-
 </section>
 
 <!-- SERVICES -->
 <section id="services">
+  <h2 class="fade">Leistungen</h2>
 
-  <div class="card big fade">
-    🌐 Webseiten, die modern aussehen und funktionieren
+  <div class="grid">
+
+    <div class="card fade">
+      🌐 Webseiten Design<br>
+      Moderne, klare Strukturen
+    </div>
+
+    <div class="card fade">
+      ⚡ Performance<br>
+      Schnelle Ladezeiten & optimiert
+    </div>
+
+    <div class="card fade">
+      📱 Mobile First<br>
+      Perfekt für Smartphone & Tablet
+    </div>
+
+    <div class="card fade">
+      🎯 UX Fokus<br>
+      Besucherführung & klare Struktur
+    </div>
+
   </div>
-
-  <div class="card big fade">
-    ⚡ Schnelle Umsetzung ohne lange Wartezeit
-  </div>
-
-  <div class="card big fade">
-    📱 Perfekt für Handy, Tablet und Desktop
-  </div>
-
-  <div class="card big fade">
-    🎯 Fokus auf Klarheit statt Chaos
-  </div>
-
 </section>
 
-<!-- VALUE SECTION -->
-<section>
+<!-- PROCESS -->
+<section id="process">
+  <h2 class="fade">Ablauf</h2>
+
+  <div class="timeline">
+
+    <div class="step fade">
+      <b>1. Kontakt</b><br>
+      Du schreibst mir direkt.
+    </div>
+
+    <div class="step fade">
+      <b>2. Idee</b><br>
+      Wir klären, was du brauchst.
+    </div>
+
+    <div class="step fade">
+      <b>3. Design</b><br>
+      Ich entwickle das Layout.
+    </div>
+
+    <div class="step fade">
+      <b>4. Fertig</b><br>
+      Deine Website geht online.
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <h2 class="fade">FAQ</h2>
 
   <div class="card fade">
-    Viele Webseiten sehen kompliziert aus – aber bringen keine Kunden.<br><br>
-    FHP setzt auf einfache Struktur + starke visuelle Wirkung.
+    <b>Ist das eine Firma?</b><br>
+    Nein, es ist ein privates Hobbyprojekt.
   </div>
 
   <div class="card fade">
-    Ziel ist nicht nur Design – sondern dass Menschen bleiben,
-    lesen und Kontakt aufnehmen.
+    <b>Wie läuft Kommunikation?</b><br>
+    Nur über Telegram oder WhatsApp.
+  </div>
+
+  <div class="card fade">
+    <b>Wie schnell arbeitest du?</b><br>
+    Abhängig vom Projekt, meistens schnell und direkt.
   </div>
 
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
+  <h2 class="fade">Kontakt</h2>
 
   <div class="card fade">
-    <b>Kontakt</b><br><br>
+    <b>Direkt schreiben:</b><br><br>
+
     Telegram: @Duf7484<br>
     WhatsApp: +380972921871<br><br>
 
-    Direkt schreiben = schneller Start deines Projekts.
+    Schnellste Antwort über Telegram 💬
   </div>
-
 </section>
 
-<!-- FLOAT BUTTON (NICHT ANFASSEN) -->
+<!-- FLOAT BUTTON -->
 <a class="float-btn" href="https://t.me/Duf7484">💬</a>
 
 <!-- FOOTER -->
 <footer>
-© 2026 FHP<br>
-<span onclick="openModal('impressum')">Impressum</span> |
-<span onclick="openModal('datenschutz')">Datenschutz</span>
+  © 2026 FHP<br>
+  <span onclick="openModal('impressum')">Impressum</span> |
+  <span onclick="openModal('datenschutz')">Datenschutz</span>
 </footer>
 
-<!-- MODAL (NICHT GEÄNDERT INHALTLICH) -->
+<!-- MODAL -->
 <div class="modal" id="modal" onclick="closeModal()">
   <div class="modal-box" onclick="event.stopPropagation()">
 
@@ -132,11 +185,15 @@
       <p>FHP – Freelance Hobby Projekt</p>
       <p>Vadim Zavadskij</p>
       <p>Gera, Deutschland</p>
+      <p>Kontakt: Telegram / WhatsApp</p>
+      <p>Privates Hobbyprojekt, kein Gewerbe</p>
     </div>
 
     <div id="datenschutz" class="modal-content">
       <h2>Datenschutz</h2>
-      <p>Keine Datenspeicherung. Nur Kontakt über externe Dienste.</p>
+      <p>Keine aktive Datenspeicherung.</p>
+      <p>Nur Kontakt über externe Dienste.</p>
+      <p>GitHub Pages kann technische Daten speichern.</p>
     </div>
 
   </div>
