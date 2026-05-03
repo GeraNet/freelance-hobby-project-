@@ -1,32 +1,146 @@
-function toggleMenu(){
-  document.getElementById("menu").classList.toggle("open");
+body{
+  margin:0;
+  font-family:system-ui;
+  background:#fff;
+  color:#111;
+  overflow-x:hidden;
 }
 
-function openModal(id){
-  document.getElementById("modal").style.display="flex";
-
-  document.querySelectorAll(".modal-content")
-    .forEach(el=>el.style.display="none");
-
-  document.getElementById(id).style.display="block";
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:14px 16px;
+  background:#fff;
+  border-bottom:1px solid #eee;
+  z-index:1000;
 }
 
-function closeModal(){
-  document.getElementById("modal").style.display="none";
+/* BURGER */
+.burger span{
+  display:block;
+  height:3px;
+  background:#111;
+  margin:5px 0;
 }
 
-/* SCROLL ANIMATION */
-const items = document.querySelectorAll(".card, .step");
-
-function reveal(){
-  const trigger = window.innerHeight * 0.85;
-
-  items.forEach(el=>{
-    if(el.getBoundingClientRect().top < trigger){
-      el.classList.add("show");
-    }
-  });
+/* MENU */
+.menu{
+  position:fixed;
+  inset:0;
+  background:#111;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  transform:translateX(100%);
+  transition:0.5s;
 }
 
-window.addEventListener("scroll", reveal);
-window.addEventListener("load", reveal);
+.menu.open{
+  transform:translateX(0);
+}
+
+.menu a{
+  color:white;
+  font-size:22px;
+}
+
+/* HERO */
+header{
+  padding:120px 16px 60px;
+}
+
+h1{
+  font-size:32px;
+}
+
+p{
+  opacity:0.8;
+  line-height:1.6;
+}
+
+/* SECTIONS */
+section{
+  padding:30px 16px;
+}
+
+.section-title{
+  font-size:20px;
+  margin-bottom:15px;
+}
+
+/* CARDS */
+.card{
+  background:#f6f6f6;
+  padding:18px;
+  border-radius:14px;
+  margin-bottom:12px;
+
+  opacity:0;
+  transform:translateY(25px);
+  transition:0.6s;
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  padding:14px 20px;
+  background:#111;
+  color:white;
+  border-radius:12px;
+  text-decoration:none;
+  margin-top:10px;
+}
+
+/* FLOAT */
+.float-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#111;
+  color:white;
+  padding:16px;
+  border-radius:50%;
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  font-size:13px;
+  opacity:0.7;
+}
+
+footer span{
+  cursor:pointer;
+  text-decoration:underline;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-box{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  width:90%;
+  max-width:500px;
+}
