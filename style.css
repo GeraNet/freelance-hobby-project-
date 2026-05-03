@@ -1,173 +1,32 @@
-body{
-  margin:0;
-  font-family:system-ui;
-  background:#0b0b0f;
-  color:#fff;
-  overflow-x:hidden;
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("open");
 }
 
-/* NAV */
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  padding:14px 16px;
-  z-index:1000;
-  backdrop-filter:blur(10px);
+function openModal(id){
+  document.getElementById("modal").style.display="flex";
+
+  document.querySelectorAll(".modal-content")
+    .forEach(el=>el.style.display="none");
+
+  document.getElementById(id).style.display="block";
 }
 
-/* LOGO */
-.logo{
-  font-weight:700;
-  letter-spacing:2px;
+function closeModal(){
+  document.getElementById("modal").style.display="none";
 }
 
-/* MENU */
-.menu{
-  position:fixed;
-  inset:0;
-  background:#0b0b0f;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  gap:22px;
-  transform:translateX(100%);
-  transition:0.5s ease;
+/* SCROLL ANIMATION */
+const items = document.querySelectorAll(".card, .step");
+
+function reveal(){
+  const trigger = window.innerHeight * 0.85;
+
+  items.forEach(el=>{
+    if(el.getBoundingClientRect().top < trigger){
+      el.classList.add("show");
+    }
+  });
 }
 
-.menu.open{ transform:translateX(0); }
-
-.menu a{
-  color:#fff;
-  font-size:22px;
-  opacity:0.8;
-}
-
-/* HERO */
-header{
-  padding:140px 20px 80px;
-  text-align:center;
-}
-
-.tag{
-  color:#3b82f6;
-  margin-bottom:10px;
-  font-size:14px;
-}
-
-h1{
-  font-size:34px;
-  margin:10px 0;
-}
-
-p{
-  opacity:0.7;
-  max-width:600px;
-  margin:auto;
-}
-
-/* BUTTONS */
-.buttons{
-  margin-top:20px;
-}
-
-.btn{
-  display:inline-block;
-  padding:12px 20px;
-  background:#3b82f6;
-  color:white;
-  border-radius:10px;
-  text-decoration:none;
-  margin:5px;
-}
-
-.btn.ghost{
-  background:transparent;
-  border:1px solid #3b82f6;
-}
-
-/* SECTIONS */
-section{
-  padding:60px 20px;
-  max-width:1000px;
-  margin:auto;
-}
-
-h2{
-  margin-bottom:20px;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
-}
-
-/* CARDS */
-.card{
-  background:rgba(255,255,255,0.05);
-  padding:18px;
-  border-radius:14px;
-  transition:0.3s;
-  transform:translateY(20px);
-  opacity:0;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  background:rgba(255,255,255,0.08);
-}
-
-/* TIMELINE */
-.timeline{
-  display:grid;
-  gap:10px;
-}
-
-.step{
-  background:rgba(255,255,255,0.05);
-  padding:15px;
-  border-radius:12px;
-  opacity:0;
-  transform:translateX(-20px);
-}
-
-/* FLOAT BUTTON */
-.float-btn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#3b82f6;
-  color:#fff;
-  padding:16px;
-  border-radius:50%;
-  text-decoration:none;
-}
-
-/* MODAL */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.8);
-  justify-content:center;
-  align-items:center;
-}
-
-.modal-box{
-  background:#111;
-  padding:20px;
-  border-radius:12px;
-  max-width:500px;
-}
-
-/* ANIMATION */
-.show{
-  opacity:1 !important;
-  transform:translateY(0) translateX(0) !important;
-  transition:0.6s ease;
-}
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
