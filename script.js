@@ -1,35 +1,36 @@
 // MENU
 function toggleMenu(){
-  const menu = document.getElementById("menu");
-  menu.classList.toggle("open");
-
+  document.getElementById("menu").classList.toggle("open");
   document.body.style.overflow =
-    menu.classList.contains("open") ? "hidden" : "auto";
+    document.getElementById("menu").classList.contains("open")
+    ? "hidden"
+    : "auto";
 }
 
-// MODAL
+// MODAL SYSTEM
 function openModal(id){
   const modal = document.getElementById("modal");
   modal.style.display = "flex";
 
-  document.querySelectorAll(".modal-box > div")
-    .forEach(el => el.style.display="none");
+  document.querySelectorAll(".modal-content")
+    .forEach(el => el.style.display = "none");
 
-  document.getElementById(id).style.display="block";
+  document.getElementById(id).style.display = "block";
 }
 
 function closeModal(){
-  document.getElementById("modal").style.display="none";
+  document.getElementById("modal").style.display = "none";
 }
 
-// ANIMATION
-const blocks = document.querySelectorAll(".block");
+// SCROLL ANIMATION
+const fadeEls = document.querySelectorAll(".fade");
 
 function reveal(){
-  const t = window.innerHeight * 0.85;
-  blocks.forEach(b=>{
-    if(b.getBoundingClientRect().top < t){
-      b.classList.add("show");
+  const trigger = window.innerHeight * 0.85;
+
+  fadeEls.forEach(el=>{
+    if(el.getBoundingClientRect().top < trigger){
+      el.classList.add("show");
     }
   });
 }
