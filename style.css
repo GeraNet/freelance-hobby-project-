@@ -3,6 +3,7 @@ body{
   font-family:system-ui;
   background:#fff;
   color:#111;
+  overflow-x:hidden;
 }
 
 /* NAV */
@@ -18,14 +19,6 @@ nav{
   z-index:1000;
 }
 
-/* BURGER */
-.burger span{
-  display:block;
-  height:3px;
-  background:#111;
-  margin:5px 0;
-}
-
 /* MENU */
 .menu{
   position:fixed;
@@ -35,45 +28,72 @@ nav{
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  gap:20px;
+  gap:22px;
   transform:translateX(100%);
-  transition:0.4s;
+  transition:0.5s cubic-bezier(.2,.8,.2,1);
 }
 
-.menu.open{
-  transform:translateX(0);
-}
+.menu.open{ transform:translateX(0); }
 
 .menu a{
   color:white;
   font-size:22px;
+  opacity:0.8;
+  transition:0.2s;
+}
+.menu a:hover{ opacity:1; transform:scale(1.05); }
+
+/* HERO */
+header{
+  padding:110px 16px 40px;
+  text-align:left;
+}
+
+h1{
+  font-size:28px;
+  animation:fadeUp 1s ease forwards;
+}
+
+p{
+  font-size:16px;
+  opacity:0.8;
+  line-height:1.6;
+}
+
+.highlight{
+  margin-top:10px;
+  font-weight:600;
+  color:#2563eb;
 }
 
 /* SECTIONS */
-header,section{
-  padding:90px 16px;
-  margin-top:60px;
+section{
+  padding:20px 16px;
 }
 
 /* CARDS */
 .card{
-  background:#f6f6f6;
-  padding:16px;
-  border-radius:12px;
-  margin-bottom:10px;
+  background:#f7f7f7;
+  padding:18px;
+  border-radius:14px;
+  margin-bottom:12px;
+
   transition:0.3s;
+  opacity:0;
+  transform:translateY(20px);
 }
 
 .card:hover{
-  transform:scale(1.03);
+  transform:translateY(-4px) scale(1.02);
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
 .big{
-  font-size:18px;
-  text-align:center;
+  font-size:16px;
+  font-weight:600;
 }
 
-/* FLOAT */
+/* FLOAT BUTTON (оставляем) */
 .float-btn{
   position:fixed;
   bottom:20px;
@@ -83,18 +103,16 @@ header,section{
   padding:16px;
   border-radius:50%;
   text-decoration:none;
+  font-size:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 /* FOOTER */
 footer{
   text-align:center;
   padding:30px;
-  border-top:1px solid #eee;
-}
-
-footer span{
-  cursor:pointer;
-  text-decoration:underline;
+  font-size:14px;
+  opacity:0.7;
 }
 
 /* MODAL */
@@ -112,17 +130,18 @@ footer span{
   padding:20px;
   border-radius:12px;
   width:90%;
-  max-width:600px;
+  max-width:500px;
 }
 
-/* ANIMATION */
-.fade{
-  opacity:0;
-  transform:translateY(20px);
-}
-
-.fade.show{
+/* FADE SHOW */
+.card.show{
   opacity:1;
   transform:translateY(0);
-  transition:0.6s;
+  transition:0.6s ease;
+}
+
+/* HERO ANIMATION */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
 }
