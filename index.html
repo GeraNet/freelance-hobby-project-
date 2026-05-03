@@ -10,12 +10,11 @@
 
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo">FHP</div>
 
   <div class="burger" onclick="toggleMenu()">
-    <div></div><div></div><div></div>
+    <span></span><span></span><span></span>
   </div>
 </nav>
 
@@ -25,70 +24,63 @@
   <a href="#about" onclick="toggleMenu()">Über mich</a>
   <a href="#services" onclick="toggleMenu()">Leistungen</a>
   <a href="#contact" onclick="toggleMenu()">Kontakt</a>
-  <a href="#" onclick="openModal('impressum')">Impressum</a>
-  <a href="#" onclick="openModal('datenschutz')">Datenschutz</a>
+
+  <a onclick="openModal('impressum')">Impressum</a>
+  <a onclick="openModal('datenschutz')">Datenschutz</a>
 </div>
 
 <!-- HERO -->
-<header id="hero">
-  <h1>Moderne Websites für echte Projekte</h1>
-  <p>
-    FHP – Freelance Hobby Projekt aus Gera.<br>
-    Schnelle, moderne Webseiten für kleine Projekte und Unternehmen.
-  </p>
-  <a class="btn" href="#contact">Projekt starten</a>
+<header id="hero" class="fade">
+  <h1>Moderne Websites 🚀</h1>
+  <p>FHP – Freelance Hobby Projekt aus Gera</p>
 </header>
 
 <!-- ABOUT -->
-<section id="about" class="block">
-  <h2>Über mich</h2>
-
-  <div class="card">Ich bin Vadim, 14 Jahre alt und entwickle Websites als Hobby.</div>
-  <div class="card">Keine Firma – direkte Zusammenarbeit ohne Agentur.</div>
-  <div class="card">Ziel: moderne und funktionale Webseiten.</div>
+<section id="about">
+  <div class="card fade">Ich bin Vadim, 14 Jahre alt</div>
+  <div class="card fade">Webdesign als Hobby Projekt</div>
+  <div class="card fade">Direkte Zusammenarbeit ohne Firma</div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="block">
-  <h2>Leistungen</h2>
-
-  <div class="grid">
-    <div class="card">🌐 Webdesign – moderne Webseiten</div>
-    <div class="card">⚡ Performance – schnell & optimiert</div>
-    <div class="card">📱 Mobile – für alle Geräte</div>
-  </div>
+<section id="services">
+  <div class="card big fade">🌐 Webdesign</div>
+  <div class="card big fade">⚡ Schnell</div>
+  <div class="card big fade">📱 Mobile</div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="block">
-  <h2>Kontakt</h2>
-
-  <div class="card">
+<section id="contact">
+  <div class="card fade">
     Telegram: @Duf7484<br>
-    WhatsApp: +380972921871<br><br>
-    Zahlung aktuell nur bar in Gera
+    WhatsApp: +380972921871
   </div>
 </section>
 
+<!-- FLOAT BUTTON -->
+<a class="float-btn" href="https://t.me/Duf7484">💬</a>
+
+<!-- FOOTER -->
 <footer>
-© 2026 FHP – Freelance Hobby Projekt
+© 2026 FHP<br>
+<span onclick="openModal('impressum')">Impressum</span> |
+<span onclick="openModal('datenschutz')">Datenschutz</span>
 </footer>
 
-<!-- MODAL -->
+<!-- MODAL SYSTEM -->
 <div class="modal" id="modal" onclick="closeModal()">
   <div class="modal-box" onclick="event.stopPropagation()">
 
     <!-- IMPRESSUM -->
-    <div id="impressum" style="display:none">
+    <div id="impressum" class="modal-content">
       <h2>Impressum</h2>
+
       <p><b>Angaben gemäß § 5 TMG</b></p>
 
       <p>
         FHP – Freelance Hobby Projekt<br>
-        Vadim Zavadskij<br>
-        Schleizer Str. 3<br>
-        07549 Gera<br>
-        Deutschland
+        Betreiber: Vadim Zavadskij<br>
+        Standort: Gera, Deutschland
       </p>
 
       <p>
@@ -98,30 +90,32 @@
       </p>
 
       <p>
-        Privates Hobbyprojekt – kein Unternehmen.
+        Dieses Projekt ist ein privates Hobbyprojekt und kein Gewerbe.
       </p>
 
       <p>
-        Verantwortlich nach § 55 RStV:<br>
-        Vadim Zavadskij
+        Adresse: auf Anfrage über Kontakt verfügbar
       </p>
     </div>
 
     <!-- DATENSCHUTZ -->
-    <div id="datenschutz" style="display:none">
+    <div id="datenschutz" class="modal-content">
       <h2>Datenschutzerklärung</h2>
 
-      <p><b>1. Allgemeine Hinweise</b></p>
-      <p>Diese Website speichert keine personenbezogenen Daten.</p>
+      <p><b>1. Allgemein</b></p>
+      <p>Diese Website ist ein privates Hobbyprojekt.</p>
 
-      <p><b>2. Hosting</b></p>
-      <p>Bereitgestellt über GitHub Pages (Server-Logfiles möglich).</p>
+      <p><b>2. Keine Datenspeicherung</b></p>
+      <p>Es werden keine personenbezogenen Daten gespeichert.</p>
 
-      <p><b>3. Kontakt</b></p>
-      <p>Kontakt über Telegram / WhatsApp (externe Anbieter).</p>
+      <p><b>3. Hosting</b></p>
+      <p>GitHub Pages kann technische Daten (IP, Browser) speichern.</p>
 
-      <p><b>4. Rechte</b></p>
-      <p>Recht auf Auskunft und Löschung.</p>
+      <p><b>4. Kontakt</b></p>
+      <p>Kontakt über Telegram / WhatsApp.</p>
+
+      <p><b>5. Cookies</b></p>
+      <p>Keine Tracking- oder Analyse-Cookies.</p>
     </div>
 
   </div>
