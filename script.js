@@ -18,17 +18,15 @@ function closeModal(){
   document.getElementById("modal").style.display = "none";
 }
 
-/* STRONG SCROLL ANIMATION */
+/* ANIMATION ON SCROLL (TILDA STYLE) */
 const cards = document.querySelectorAll(".card");
 
 function reveal(){
   const trigger = window.innerHeight * 0.85;
 
-  cards.forEach((el, i)=>{
+  cards.forEach(el=>{
     if(el.getBoundingClientRect().top < trigger){
-      setTimeout(()=>{
-        el.classList.add("show");
-      }, i * 60); // stagger effect
+      el.classList.add("show");
     }
   });
 }
